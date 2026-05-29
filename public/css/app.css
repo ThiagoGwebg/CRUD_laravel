@@ -276,6 +276,15 @@ body {
 }
 .btn-ghost:hover { background: var(--bg); border-color: var(--border-strong); }
 
+.btn-danger {
+    background: #fff1f2;
+    color: var(--danger);
+    border-color: #fecdd3;
+    box-shadow: var(--shadow-sm);
+}
+.btn-danger:hover { background: var(--danger); color: #fff; border-color: var(--danger); box-shadow: var(--shadow); }
+.btn-danger:active { transform: translateY(1px); }
+
 .btn-full { width: 100%; justify-content: center; padding: 11px 16px; }
 
 /* ============ STATS ============ */

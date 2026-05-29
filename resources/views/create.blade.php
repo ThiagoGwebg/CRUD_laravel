@@ -40,24 +40,32 @@
                         <p>Preencha os dados básicos. Você poderá editar depois.</p>
                     </div>
 
-                    <form method="post" action="/produtos">
+                    <form method="post" action="/produtos" enctype="multipart/form-data">
                         @csrf
                         <div class="form-body">
                             <div class="field">
                                 <label class="field-label" for="nome">Nome do produto</label>
                                 <div class="input-wrap">
                                     <input class="field-input" type="text" name="nome" id="nome"
-                                           placeholder="Ex: Camiseta básica branca" required autofocus>
+                                        placeholder="Ex: Camiseta básica branca" required autofocus>
                                 </div>
                                 <div class="field-hint">Esse é o nome que aparecerá no catálogo.</div>
                             </div>
+
+                            <div class="field">
+                                <label class="field-label" for="imagem">Imagem</label>
+                                <div class="input-wrap">
+                                    <input type="file" id="imagem" name="imagem" accept="image/">
+                                </div>
+                            </div>
+
 
                             <div class="field">
                                 <label class="field-label" for="preco">Preço de venda</label>
                                 <div class="input-wrap">
                                     <span class="input-prefix">R$</span>
                                     <input class="field-input with-prefix" type="number" step="0.01" min="0"
-                                           name="preco" id="preco" placeholder="0,00" required>
+                                        name="preco" id="preco" placeholder="0,00" required>
                                 </div>
                                 <div class="field-hint">Use ponto para separar centavos (ex: 49.90).</div>
                             </div>
@@ -66,7 +74,10 @@
                         <div class="form-actions">
                             <a href="/produtos" class="btn btn-ghost">Cancelar</a>
                             <button type="submit" class="btn btn-primary">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
                                 Salvar produto
                             </button>
                         </div>
