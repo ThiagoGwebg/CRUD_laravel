@@ -182,38 +182,6 @@ body {
 .breadcrumb .sep { color: var(--text-subtle); }
 .breadcrumb .current { color: var(--text); font-weight: 500; }
 
-.search {
-    flex: 1;
-    max-width: 360px;
-    position: relative;
-}
-
-.search input {
-    width: 100%;
-    padding: 8px 12px 8px 36px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    font-family: inherit;
-    background: var(--bg);
-    outline: none;
-    transition: border-color .15s, background .15s, box-shadow .15s;
-}
-
-.search input:focus {
-    border-color: var(--primary);
-    background: var(--surface);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
-}
-
-.search svg {
-    position: absolute;
-    left: 11px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px; height: 16px;
-    color: var(--text-subtle);
-}
 
 .content {
     padding: 32px;
@@ -615,6 +583,72 @@ input.field-input:focus {
     justify-content: flex-end;
     gap: 8px;
 }
+
+/* ============ SEARCH FORM ============ */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 420px;
+}
+
+.search-form-input-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.search-form-input-wrap svg {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    color: var(--text-subtle);
+    pointer-events: none;
+}
+
+.search-form-input-wrap input {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-family: inherit;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color .15s, background .15s, box-shadow .15s;
+}
+
+.search-form-input-wrap input::placeholder { color: var(--text-subtle); }
+
+.search-form-input-wrap input:focus {
+    border-color: var(--primary);
+    background: var(--surface);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* ============ PRODUCT IMAGE ============ */
+.product-img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+}
+
+/* ============ CARD ACTIONS ============ */
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.card-actions form { margin: 0; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
